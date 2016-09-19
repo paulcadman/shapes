@@ -32,16 +32,12 @@ func (c *Circle) Area() float64 {
 	return math.Pi * float64(c.Radius) * float64(c.Radius)
 }
 
-func (c *Circle) Properties() Properties {
-	return c.Props
-}
-
 func (c *Circle) Xml() string {
 	return toXml(c)
 }
 
 func (c *Circle) Draw(s *svg.SVG) {
-	s.Circle(c.Properties().Anchor.X, c.Properties().Anchor.Y, c.Radius, fmt.Sprintf("fill:%s;stroke:none", colorToHex(c.Properties().Colour)))
+	s.Circle(c.Props.Anchor.X, c.Props.Anchor.Y, c.Radius, fmt.Sprintf("fill:%s;stroke:none", colorToHex(c.Props.Colour)))
 }
 
 func colorToHex(c color.Color) string {
@@ -63,16 +59,12 @@ func (r *Rectangle) Area() float64 {
 	return float64(r.Width * r.Height)
 }
 
-func (r *Rectangle) Properties() Properties {
-	return r.Props
-}
-
 func (r *Rectangle) Xml() string {
 	return toXml(r)
 }
 
 func (r *Rectangle) Draw(s *svg.SVG) {
-	s.Rect(r.Properties().Anchor.X, r.Properties().Anchor.Y, r.Width, r.Height, fmt.Sprintf("fill:%s;stroke:none", colorToHex(r.Properties().Colour)))
+	s.Rect(r.Props.Anchor.X, r.Props.Anchor.Y, r.Width, r.Height, fmt.Sprintf("fill:%s;stroke:none", colorToHex(r.Props.Colour)))
 }
 
 func NewRectangle(width int, height int, anchor image.Point, colour color.Color) *Rectangle {

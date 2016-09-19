@@ -9,7 +9,6 @@ type XmlStringer interface {
 type Shape interface {
 	XmlStringer
 	Area() float64
-	Properties() Properties
 }
 
 type SVGDrawer interface {
