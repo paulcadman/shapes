@@ -18,4 +18,4 @@ Run the program
 
 `$GOPATH/bin/draw`
 
-Visit http://localhost:2003/draw
+Visit <http://localhost:2003/draw>
